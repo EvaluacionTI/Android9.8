@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Registro de Canal</string>
+
+    <string name="tv_codigo">Código : </string>
+    <string name="tv_abrevitura">Abreviatura : </string>
+    <string name="tv_descripcion">Descripción : </string>
+    <string name="tv_trama_canal">Cada campo de un color diferente</string>
+
+    <string name="tv_codigo_ini">TM</string>
+    <string name="tv_abrevitura_ini">ATM</string>
+    <string name="tv_descripcion_ini">ATM PÚBLICO</string>
+    <string name="tv_trama_canal_ini">Código | Abreviatura | Descripción</string>
+
+    <string name="btn_enviar">Enviar</string>
+</resources>
