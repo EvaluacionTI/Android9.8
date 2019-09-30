@@ -23,7 +23,7 @@ public class CCBaseAdaptarCustom extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) oContenxt
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-
+//https://www.mkyong.com/android/android-gridview-example/
         View gridView;
         if (poConvertView == null) {
 
