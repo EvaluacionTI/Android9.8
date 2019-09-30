@@ -6,7 +6,7 @@
     android:id="@+id/id_registro_canal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CVRegistroCanal"
+    tools:context="pe.etg.bbva.android.view.CVRegistroCanal"
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
@@ -134,5 +134,33 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_btn_enviar" />
+
+    <TextView
+        android:id="@+id/id_tv_concatenar_color"
+        android:layout_width="212dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/tv_texto_por_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_trama_canal" />
+
+    <TextView
+        android:id="@+id/id_tv_style_face"
+        android:layout_width="208dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/tv_style_texto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_concatenar_color" />
 
 </android.support.constraint.ConstraintLayout>

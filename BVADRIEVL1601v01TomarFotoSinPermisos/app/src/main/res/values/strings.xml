@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BVADRIEVL1601v01TomarFotoSinPermisos</string>
+    <string name="coordenadas">Coordenadas</string>
+    <string name="tomarFoto">Tomar Foto</string>
+    <string name="grabar">Grabar SQLite</string>
+</resources>
