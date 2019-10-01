@@ -12,18 +12,16 @@ import pe.bbva.evalua.android4.view.R;
 
 public class CCBaseAdaptarCustom extends BaseAdapter {
     private Context oContenxt;
-    private String[] mobileValues = null;
+    private String[] saMobileValues = null;
 
     public CCBaseAdaptarCustom(Context poContext, String[] pasMobileValues){
         this.oContenxt = poContext;
-        this.mobileValues = pasMobileValues;
+        this.saMobileValues = pasMobileValues;
     }
 
     public View getView(int piPosition, View poConvertView, ViewGroup poViewGroup){
-        LayoutInflater inflater = (LayoutInflater) oContenxt
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-//https://www.mkyong.com/android/android-gridview-example/
+        LayoutInflater inflater = (LayoutInflater) oContenxt.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//https://www.mkyong.com/tutorials/android-tutorial/
         View gridView;
         if (poConvertView == null) {
 
@@ -33,23 +31,24 @@ public class CCBaseAdaptarCustom extends BaseAdapter {
             gridView = inflater.inflate(R.layout.activity_imagen_view, null);
 
             // set value into textview
-            TextView textView = (TextView) gridView
-                    .findViewById(R.id.grid_item_label);
-            textView.setText(mobileValues[position]);
+            TextView textView = (TextView) gridView.findViewById(R.id.id_tv_texto_foto);
+            textView.setText(saMobileValues[piPosition]);
 
             // set image based on selected text
             ImageView imageView = (ImageView) gridView.findViewById(R.id.id_img_view_foto);
 
-            String mobile = mobileValues[position];
+            String mobile = saMobileValues[piPosition];
 
-            if (mobile.equals("Windows")) {
-                imageView.setImageResource(R.drawable.windows_logo);
-            } else if (mobile.equals("iOS")) {
-                imageView.setImageResource(R.drawable.ios_logo);
-            } else if (mobile.equals("Blackberry")) {
-                imageView.setImageResource(R.drawable.blackberry_logo);
+            if (mobile.equals("ili01")) {
+                imageView.setImageResource((R.drawable.ili01_20190101));
+            } else if (mobile.equals("ili02")) {
+                imageView.setImageResource(R.drawable.ili02_20190101);
+            } else if (mobile.equals("ili03")) {
+                imageView.setImageResource(R.drawable.ili03_20190101);
+            } else if (mobile.equals("ili04")) {
+                imageView.setImageResource(R.drawable.ili04_20190101);
             } else {
-                imageView.setImageResource(R.drawable.android_logo);
+                imageView.setImageResource(R.drawable.ili05_20190101);
             }
 
         } else {
@@ -73,8 +72,4 @@ public class CCBaseAdaptarCustom extends BaseAdapter {
         return 0;
     }
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
-    }
 }

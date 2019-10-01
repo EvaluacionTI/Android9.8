@@ -16,7 +16,7 @@ import pe.bbva.evalua.android4.controller.CCBaseAdaptarCustom;
 public class MainActivity extends AppCompatActivity implements OnItemClickListener {
     private GridView oGvMostrarImagen;
     private static final String[] osImagen = new String[]{
-        "Cells", "APX", "HOST", "Datio"
+        "Ili01", "Ili02", "Ili03", "Ili04", "Ili05"
     };
 
     @Override
