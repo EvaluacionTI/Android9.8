@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Evaluación Android - RadioButton</string>
+
+    <string name="tv_primer_valor">Primer Valor</string>
+    <string name="tv_segundo_valor">Segundo Valor</string>
+
+    <string name="rbtn_sumar">Sumar</string>
+    <string name="rbtn_restar">Restar</string>
+
+    <string name="btn_calcular">Calcular</string>
+    <string name="tv_result_operation">Resultado</string>
+</resources>
