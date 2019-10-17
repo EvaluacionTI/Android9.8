@@ -3,6 +3,7 @@ package pe.inverfin.evalua.android4.service;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.HandlerThread;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -40,11 +41,15 @@ public class ServiceTask extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPreExecute(){
         super.onPreExecute();
-        progressDialog = ProgressDialog.show(httpContext, "Process request", "A moment please");
+        //progressDialog = ProgressDialog.show(httpContext, "Process request", "A moment please");
+        Toast.makeText(this.httpContext, "Json Data is downloading .....!",Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected Void doInBackground(Void... voids) {
+
+
+
         String result = null;
 
         String wsURL = linkrequestAPI;
