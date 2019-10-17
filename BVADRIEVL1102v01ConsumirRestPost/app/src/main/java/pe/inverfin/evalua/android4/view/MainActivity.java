@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         new getListContacts().execute();
 
+
     }
 
     private class getListContacts extends AsyncTask<Void, Void, Void>{
