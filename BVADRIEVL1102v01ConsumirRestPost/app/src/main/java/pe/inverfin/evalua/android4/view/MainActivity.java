@@ -23,9 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private ListView oListViewContacts;
     private ArrayList<HashMap<String, String>> oArrayListContacts;
-//    private EditText oEtIdentificador, oEtFirstName, oEtLastName, oEtEmail, oEtCelular, oEtDateBirth;
-//    private Button oBtnEnviar;
-//    private CECustomer oCliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,74 +116,4 @@ public class MainActivity extends AppCompatActivity {
             oListViewContacts.setAdapter(oListAdapter);
         }
     }
-
-
-
-    /*
-    Es necesario importar las librerias de http
-
-     */
- /*   public void consumoServicioPost(){
-        // Ejecutar el hilo creado
-        String lUri = "http://localhost:8020/customers/";
-        ServiceTask oCSServiceRest = new ServiceTask(getApplicationContext(), lUri);
-        oCSServiceRest.execute();
-
-    }*/
-
- /*   public void consumoServicioGet(){
-        String lsUri = "http://localhost:8020/customers";
-
-
-        StrictMode.ThreadPolicy oPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(oPolicy);
-
-        URL oUrl = null;
-        HttpURLConnection oHttpUriConexion;
-
-        try{
-            oUrl = new URL(lsUri);
-            oHttpUriConexion = (HttpURLConnection) oUrl.openConnection();
-            oHttpUriConexion.setRequestMethod("GET");
-
-            InputStreamReader oIsReader = new InputStreamReader(oHttpUriConexion.getInputStream());
-            BufferedReader oBReader = new BufferedReader(oIsReader);
-
-            String linea;
-            StringBuffer response = new StringBuffer();
-            String json = null;
-
-            while((linea =oBReader.readLine())!=null){
-                response.append(linea);
-            }
-
-            json = response.toString();
-            JSONArray oJArray = null;
-            oJArray = new JSONArray(json);
-
-            for(int i=0;i<oJArray.length();i++){
-                JSONObject oJObject = oJArray.getJSONObject(i);
-
-                oCliente.setId(oJObject.getLong("id"));
-                oCliente.setFirstName(oJObject.getString("firstName"));
-                oCliente.setLastName(oJObject.getString("lastName"));
-                oCliente.setEmail(oJObject.getString("email"));
-                oCliente.setMobile(oJObject.getString("mobile"));
-              //  oCliente.setDateOfBirth(oJObject.getJSONObject("dateOfBirth"));
-
-                Log.d("CUSTOMER", oJObject.getString("firstName"));
-            }
-
-
-            oHttpUriConexion.connect();
-
-        }catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-    }*/
 }
