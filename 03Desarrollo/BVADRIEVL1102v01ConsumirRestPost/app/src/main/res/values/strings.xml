@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BVADRIEVL1102v01ConsumirRestPost</string>
+
+    <string name="tv_id">Identificador</string>
+    <string name="tv_first_name">Primer Nombre</string>
+    <string name="tv_last_name">Segundo Nombre</string>
+    <string name="tv_email">Email</string>
+    <string name="tv_numero_celular">Número Celular</string>
+    <string name="tv_fecha_nacimiento">Fecha Nacimiento</string>
+
+    <string name="btn_enviar">Enviar</string>
+</resources>

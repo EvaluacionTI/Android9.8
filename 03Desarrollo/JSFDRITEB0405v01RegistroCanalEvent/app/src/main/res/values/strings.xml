@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Evaluation - Event in Register Channels</string>
+    <string name="tv_codigo">Código :</string>
+    <string name="tv_abreviatura">Abreviatura :</string>
+    <string name="tv_descripcion">Descripción :</string>
+    <string name="tv_motrar_concatenar">Codigo|Abreviatura|Descripcion</string>
+
+    <string name="btn_enviar">Enviar</string>
+</resources>

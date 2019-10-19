@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Evaluación Android - Checkbox</string>
+
+    <string name="teb">4-Tecnología E-Business</string>
+    <string name="daw">5-Desarrollo de Aplicaciones Web</string>
+    <string name="dbr">3-Base de datos relacional</string>
+
+    <string name="result_cred">Resultado de Créditos</string>
+    <string name="button_calcular">Calcular Créditos</string>
+
+</resources>

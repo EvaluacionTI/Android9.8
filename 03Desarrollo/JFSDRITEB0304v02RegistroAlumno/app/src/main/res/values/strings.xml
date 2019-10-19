@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Ingeniería - IS</string>
+
+    <!-- TextView -->
+    <string name="tv_codigo_alumno">Código de Alumno : </string>
+    <string name="tv_numero_dni">DNI : </string>
+    <string name="tv_apellido_paterno">Apellido Paterno : </string>
+    <string name="tv_apellido_materno">Apellido Materno : </string>
+    <string name="tv_primer_nombre">Primer Nombre : </string>
+    <string name="tv_segundo_nombre">Segundo Nombre : </string>
+    <string name="tv_tercer_nombre">Tercer Nombre : </string>
+    <string name="tv_mostrar_concatenar">Código de Alumno | DNI | Apellido Paterno | ..... | Tercer Nombre</string>
+
+    <!-- Buttom -->
+    <string name="btn_enviar">Enviar</string>
+</resources>
