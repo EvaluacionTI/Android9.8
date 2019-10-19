@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CVRegistroCanal">
+
+    <TextView
+        android:id="@+id/id_tv_codigo_canal"
+        android:layout_width="110dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:autofillHints="@string/tv_codigo"
+        android:paddingLeft="5dp"
+        android:text="@string/tv_codigo"
+        app:layout_constraintEnd_toStartOf="@+id/id_et_codigo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/id_et_codigo"
+        android:layout_width="224dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:autofillHints="@string/tv_codigo_ini"
+        android:ems="10"
+        android:hint="@string/tv_codigo_ini"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_tv_abreviatura"
+        android:layout_width="109dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:autofillHints="@string/tv_abrevitura"
+        android:paddingLeft="5dp"
+        android:text="@string/tv_abrevitura"
+        app:layout_constraintEnd_toStartOf="@+id/id_et_abreviatura"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_codigo_canal" />
+
+    <EditText
+        android:id="@+id/id_et_abreviatura"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:autofillHints="@string/tv_abrevitura_ini"
+        android:ems="10"
+        android:hint="@string/tv_abrevitura_ini"
+        android:inputType="textShortMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_et_codigo" />
+
+    <TextView
+        android:id="@+id/tv_descripcion"
+        android:layout_width="105dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:autofillHints="@string/tv_descripcion"
+        android:paddingLeft="5dp"
+        android:text="@string/tv_descripcion"
+        app:layout_constraintEnd_toStartOf="@+id/id_et_descripcion"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_abreviatura" />
+
+    <EditText
+        android:id="@+id/id_et_descripcion"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:autofillHints="@string/tv_descripcion_ini"
+        android:ems="10"
+        android:hint="@string/tv_descripcion_ini"
+        android:inputType="textLongMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_et_abreviatura" />
+
+    <Button
+        android:id="@+id/id_btn_enviar"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorAccent"
+        android:text="@string/btn_enviar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_descripcion" />
+
+    <TextView
+        android:id="@+id/id_tv_trama_canal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="28dp"
+        android:autofillHints="@string/tv_trama_canal_ini"
+        android:hint="@string/tv_trama_canal_ini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_btn_enviar" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BVADRIEVL0107v03UbicacionEnMapa</string>
+    <string name="title_activity_cvmaps">Map</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="boton_ubicarme">Iniciar Ubicación</string>
+</resources>
