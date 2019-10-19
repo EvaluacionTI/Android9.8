@@ -6,7 +6,12 @@
           <option name="url" value="http://bitbucket.org" />
           <option name="userName" value="aldv152027" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/EvaluacionTI/Android9.8.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
+    <option name="cloneParentDir" value="F:\08Android9.8" />
   </component>
 </application>
