@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">BVADRIEVL0301v01ControlBotonIMEI</string>
-
-    <string name="tv_codigo_imei">Número de IMEI : </string>
-
-    <string name="btn_traer_imei">Traer número de IMEI</string>
-
-</resources>

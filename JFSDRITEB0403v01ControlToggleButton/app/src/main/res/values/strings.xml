@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Evaluación : ControlToggleButton</string>
-
-    <string name="tg_btn_encendido">Encendido</string>
-    <string name="tg_btn_apagado">Apagado</string>
-    <string name="btn_procesar">Procesar</string>
-</resources>

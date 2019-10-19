@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Evaluation Android - ToggleButton</string>
-
-    <string name="tbtn_off_apx">APX</string>
-    <string name="tbtn_off_host">APX</string>
-    <string name="btn_procesar">Change state</string>
-</resources>

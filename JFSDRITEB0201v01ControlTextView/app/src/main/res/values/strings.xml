@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Evaluation : ControlTextView</string>
-
-    <!-- 1. Declara etiquetas -->
-    <string name="tv_cod_curso">Código</string>
-    <string name="tv_name_curso">Nombre de Curso</string>
-    <string name="tv_total_credito">Total Creditos</string>
-</resources>
