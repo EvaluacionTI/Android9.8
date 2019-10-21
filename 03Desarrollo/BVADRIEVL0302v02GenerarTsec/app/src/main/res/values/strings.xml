@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BVADRIEVL0302v02GenerarTsec</string>
+    <string name="et_usuario">Usuario :</string>
+    <string name="et_password">Password :</string>
+    <string name="btn_generar">Generar Tsec</string>
+    <string name="et_tsec">Número de Tsec :</string>
+</resources>
