@@ -61,7 +61,7 @@ public class CV0101v01GenerarTsecWithPost extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
             CSHttpHandler oCSHttpHandler = new CSHttpHandler();
             String lsUrl = "https://des.wallet.bbvacontinental.pe/QSRV_A02/TechArchitecture/pe/grantingTicket/V02";
-            String lsJson = oCSHttpHandler.makeServiceCall(lsUrl);
+            String lsJson = oCSHttpHandler.makeServiceCall(lsUrl, getApplicationContext());
             Log.i(TAG, "Response from URL" + lsJson);
             if (lsJson == null) {
                 Log.e(TAG, "Couldn't get json from server");

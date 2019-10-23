@@ -1,5 +1,6 @@
 package pe.inverfin.evalua.android4.service;
-
+//https://des.wallet.bbvacontinental.pe/QSRV_A02/TechArchitecture/pe/grantingTicket/V02/?_wadl
+import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -18,27 +19,39 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+import javax.net.ssl.HttpsURLConnection;
+
 public class CSHttpHandler {
     private static final String TAG = CSHttpHandler.class.getSimpleName();
     private URL oUrl;
-    private HttpURLConnection oHttpUrlCxn = null;
+    private HttpsURLConnection oHttpUrlCxn = null;
+    private CSCustomSSLSocketFactory oSSLSocketFactory = null;
 
     public CSHttpHandler() {
     }
 
-    public String makeServiceCall(String psRequestUrl) {
+    public String makeServiceCall(String psRequestUrl, Context poContext) {
         String lsResponse = null;
 
-
+        Log.i(TAG, "call URL" + psRequestUrl);
         try {
             oUrl = new URL(psRequestUrl);
-            oHttpUrlCxn = (HttpURLConnection) oUrl.openConnection();
+            Log.i(TAG, "URL : {}" + oUrl);
+            oHttpUrlCxn = (HttpsURLConnection) oUrl.openConnection();
+            Log.i(TAG, "HttpURLConnection : {}" + oHttpUrlCxn);
+
 
             // Add request Header
             oHttpUrlCxn.setRequestMethod("POST");
             oHttpUrlCxn.setRequestProperty("Content-Type", "application/json");
             oHttpUrlCxn.setRequestProperty("Accept", "application/json");
+            oHttpUrlCxn.setConnectTimeout(20000);
+            oHttpUrlCxn.setDoInput(true);
+            oHttpUrlCxn.setDoOutput(true);
+            oHttpUrlCxn.setSSLSocketFactory(oSSLSocketFactory.getSSLSocketFactory(poContext));
             oHttpUrlCxn.connect();
+
+            Log.i(TAG, "add Header : {}" + oHttpUrlCxn);
 
             //Add Post Data in JSON
             JSONObject oJsonData = new JSONObject();
@@ -78,6 +91,7 @@ public class CSHttpHandler {
             //Get the Response code for the request
 
             int liResponseCode = oHttpUrlCxn.getResponseCode();
+            Log.i(TAG, "getResponseCode : {}" + liResponseCode);
 
             if (liResponseCode==HttpURLConnection.HTTP_OK){
                 InputStream oIstream = new BufferedInputStream(oHttpUrlCxn.getInputStream());
