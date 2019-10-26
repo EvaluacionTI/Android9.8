@@ -21,6 +21,14 @@ public class CV0602ViewLastMovimient extends AppCompatActivity {
         oEditTextAmountComision = findViewById(R.id.id_et_amount_comision);
         oEditTextAmountTransfer = findViewById(R.id.id_et_importe_transferir);
 
+        //Inhabilitando entrada de datos
+        oEditTextBeneficiary.setEnabled(false);
+        oEditTextNumberAccountBeneficiary.setEnabled(false);
+        oEditTextReferenceBeneficiary.setEnabled(false);
+        oEditTextTypeRace.setEnabled(false);
+        oEditTextAmountComision.setEnabled(false);
+        oEditTextAmountTransfer.setEnabled(false);
+
         Bundle oBundleReceiveData = getIntent().getExtras();
         if (oBundleReceiveData != null){
             oEditTextBeneficiary.setText(oBundleReceiveData.getString("vBeneficiary"));

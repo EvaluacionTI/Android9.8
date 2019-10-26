@@ -6,67 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".CV0601DetailsLastMovimient">
 
-    <TextView
-        android:id="@+id/id_text_date_movimient"
-        android:layout_width="243dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/tv_date_movimient"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toStartOf="@+id/id_text_state_movimient"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/id_text_money_movimient"
-
-        android:layout_width="131dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
-        android:text="@string/tv_money_movimient"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toStartOf="@+id/id_text_amount_movimient"
-        app:layout_constraintStart_toStartOf="@+id/id_text_date_movimient"
-        app:layout_constraintTop_toBottomOf="@+id/id_text_date_movimient" />
-
-    <TextView
-        android:id="@+id/id_text_amount_movimient"
-        android:layout_width="225dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/tv_amount_equivalent"
-        android:textColor="@color/colorBlue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_text_state_movimient" />
-
-    <TextView
-        android:id="@+id/id_text_state_movimient"
-        android:layout_width="131dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="4dp"
-        android:text="@string/tv_state_movimient"
-        android:textColor="@color/colorAccent"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+    <TableLayout
+        android:id="@+id/id_table_level_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        android:stretchColumns="1"
+        >
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/id_text_date_movimient"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:padding="5px"
+                android:text="@string/tv_date_movimient"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/id_text_state_movimient"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/id_text_state_movimient"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="4dp"
+                android:padding="5px"
+                android:text="@string/tv_state_movimient"
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/id_text_money_movimient"
+
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="5dp"
+                android:padding="5px"
+                android:text="@string/tv_money_movimient"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toStartOf="@+id/id_text_amount_movimient"
+                app:layout_constraintStart_toStartOf="@+id/id_text_date_movimient"
+                app:layout_constraintTop_toBottomOf="@+id/id_text_date_movimient" />
+
+            <TextView
+                android:id="@+id/id_text_amount_movimient"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:padding="5px"
+                android:text="@string/tv_amount_equivalent"
+                android:textColor="@color/colorBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_text_state_movimient" />
+
+
+        </TableRow>
+    </TableLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
