@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CV0602ViewLastMovimient">
+
+    <TextView
+        android:id="@+id/id_tv_nombre_beneficiario"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorBlue"
+        android:text="@string/tv_nombre_beneficiario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/id_et_nombre_beneficiario"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/id_tv_nombre_beneficiario"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_nombre_beneficiario" />
+
+
+    <TextView
+        android:id="@+id/id_tv_numero_cuenta_beneficiario"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/colorBlue"
+        android:text="@string/tv_numero_cuenta_beneficiario"
+        app:layout_constraintTop_toBottomOf="@+id/id_et_nombre_beneficiario"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/id_et_numero_cuenta_beneficiario"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_numero_cuenta_beneficiario"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/id_tv_type_rates"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/tv_tipo_cambio"
+        android:textColor="@color/colorBlue"
+        app:layout_constraintTop_toBottomOf="@+id/id_et_numero_cuenta_beneficiario"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/id_et_type_rates"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_type_rates"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/id_tv_amount_comision"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/tv_amount_comision"
+        android:textColor="@color/colorBlue"
+        app:layout_constraintTop_toBottomOf="@+id/id_et_type_rates"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/id_et_amount_comision"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_amount_comision" />
+
+    <TextView
+        android:id="@+id/id_tv_importe_transferir"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/colorBlue"
+        android:text="@string/tv_importe_transferir"
+        app:layout_constraintTop_toBottomOf="@+id/id_et_amount_comision"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/id_et_importe_transferir"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv_importe_transferir" />
+
+    <EditText
+        android:id="@+id/id_et_referencia_transferencia"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_et_importe_transferir" />
+
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
