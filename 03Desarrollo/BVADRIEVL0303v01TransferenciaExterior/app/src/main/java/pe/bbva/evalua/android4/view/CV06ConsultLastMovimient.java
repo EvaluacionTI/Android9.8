@@ -157,6 +157,4 @@ public class CV06ConsultLastMovimient extends AppCompatActivity implements Adapt
         }
     }
 
-
-
 }

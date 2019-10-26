@@ -14,10 +14,10 @@
     <string name="tv_referencia_pago">Referencia Transfer</string>
     <string name="tv_state_pago">Estado</string>
 
-    <string name="btn_simular_transferir">Simular</string>
+    <string name="btn_simular_transferir">Simulación</string>
     <string name="btn_aceptar_transferir">Aceptación</string>
     <string name="btn_completar_transferir">Completar</string>
-    <string name="btn_consulta_by_id_tranferir">N° de Cuenta</string>
+    <string name="btn_consulta_by_id_tranferir">Información de la Cuenta</string>
     <string name="btn_consulta_all_tranferir">Últimos Movimientos</string>
 
     <!-- Query first level -->

@@ -3,6 +3,7 @@ package pe.bbva.evalua.android4.entidad;
 import java.io.Serializable;
 
 public class CEMovimient implements Serializable {
+
     //First level
     private String idTransfer;
     private String dateMovimient;
@@ -16,6 +17,15 @@ public class CEMovimient implements Serializable {
     private String typeRace;
     private String amountComision;
     private String amountTransfer;
+
+
+    public String getIdTransfer() {
+        return idTransfer;
+    }
+
+    public void setIdTransfer(String idTransfer) {
+        this.idTransfer = idTransfer;
+    }
 
     public String getDateMovimient() {
         return dateMovimient;

@@ -9,35 +9,27 @@
     <Button
         android:id="@+id/id_button_simular"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="5dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
         android:text="@string/btn_simular_transferir"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/id_button_aceptar"
-        android:layout_width="400dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
         android:text="@string/btn_aceptar_transferir"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_button_simular" />
+        app:layout_constraintTop_toBottomOf="@+id/id_button_simular"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/id_button_completar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="5dp"
         android:text="@string/btn_completar_transferir"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,26 +40,26 @@
     <Button
         android:id="@+id/id_button_query_by_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="5dp"
         android:text="@string/btn_consulta_by_id_tranferir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_button_completar" />
 
     <Button
         android:id="@+id/id_button_query_last_moviment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="5dp"
         android:text="@string/btn_consulta_all_tranferir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_button_query_by_id" />
 </androidx.constraintlayout.widget.ConstraintLayout>
