@@ -48,7 +48,7 @@ public class CSHttpHandler {
             oHttpUrlCxn.setConnectTimeout(20000);
             oHttpUrlCxn.setDoInput(true);
             oHttpUrlCxn.setDoOutput(true);
-            oHttpUrlCxn.setSSLSocketFactory(oSSLSocketFactory.getSSLSocketFactory(poContext));
+            //oHttpUrlCxn.setSSLSocketFactory(oSSLSocketFactory.getSSLSocketFactory(poContext));
             oHttpUrlCxn.connect();
 
             Log.i(TAG, "add Header : {}" + oHttpUrlCxn);
@@ -110,7 +110,7 @@ public class CSHttpHandler {
         }
         return lsResponse;
     }
-
+//15:47:41.381 27388-27442/pe.inverfin.evalua.android4.view E/CSHttpHandler: IOException : java.security.cert.CertPathValidatorException: Trust anchor for certification path not found.
     public String convertStreamToString(InputStream poIstream) {
         InputStreamReader oIStreamReader = new InputStreamReader(poIstream);
         BufferedReader oBReader = new BufferedReader(oIStreamReader);
