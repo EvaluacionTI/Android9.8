@@ -1,23 +1,28 @@
 package pe.bbva.evalua.android4.entidad;
 
-import android.text.Editable;
-
 import java.io.Serializable;
 
-public class CESimulation implements Serializable {
-    //Simulacion
+public class CEConfirm implements Serializable {
+
     private Long idTransfer;
     private String nameOrigin;
     private String numberAccountOrigin;
     private String moneyAccountOrigin;
     private double amountOrigin;
     private String dateCurrent;
-
     private String referenceOrigin;
 
     private String nameBeneficiary;
     private String numberAccountBeneficiary;
     private String moneyAccountBeneficiary;
+    private String referenceBeneficiary;
+
+    private double typeRates;
+    private double amountFee;
+    private double amountEquivalent;
+
+    private String idTransferBeneficiary;
+    private String stateTransfer;
 
 
     public Long getIdTransfer() {
@@ -100,9 +105,57 @@ public class CESimulation implements Serializable {
         this.moneyAccountBeneficiary = moneyAccountBeneficiary;
     }
 
+    public String getReferenceBeneficiary() {
+        return referenceBeneficiary;
+    }
+
+    public void setReferenceBeneficiary(String referenceBeneficiary) {
+        this.referenceBeneficiary = referenceBeneficiary;
+    }
+
+    public double getTypeRates() {
+        return typeRates;
+    }
+
+    public void setTypeRates(double typeRates) {
+        this.typeRates = typeRates;
+    }
+
+    public double getAmountFee() {
+        return amountFee;
+    }
+
+    public void setAmountFee(double amountFee) {
+        this.amountFee = amountFee;
+    }
+
+    public double getAmountEquivalent() {
+        return amountEquivalent;
+    }
+
+    public void setAmountEquivalent(double amountEquivalent) {
+        this.amountEquivalent = amountEquivalent;
+    }
+
+    public String getIdTransferBeneficiary() {
+        return idTransferBeneficiary;
+    }
+
+    public void setIdTransferBeneficiary(String idTransferBeneficiary) {
+        this.idTransferBeneficiary = idTransferBeneficiary;
+    }
+
+    public String getStateTransfer() {
+        return stateTransfer;
+    }
+
+    public void setStateTransfer(String stateTransfer) {
+        this.stateTransfer = stateTransfer;
+    }
+
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("CESimulation{");
+        final StringBuffer sb = new StringBuffer("CEConfirm{");
         sb.append("idTransfer=").append(idTransfer);
         sb.append(", nameOrigin='").append(nameOrigin).append('\'');
         sb.append(", numberAccountOrigin='").append(numberAccountOrigin).append('\'');
@@ -113,6 +166,12 @@ public class CESimulation implements Serializable {
         sb.append(", nameBeneficiary='").append(nameBeneficiary).append('\'');
         sb.append(", numberAccountBeneficiary='").append(numberAccountBeneficiary).append('\'');
         sb.append(", moneyAccountBeneficiary='").append(moneyAccountBeneficiary).append('\'');
+        sb.append(", referenceBeneficiary='").append(referenceBeneficiary).append('\'');
+        sb.append(", typeRates=").append(typeRates);
+        sb.append(", amountFee=").append(amountFee);
+        sb.append(", amountEquivalent=").append(amountEquivalent);
+        sb.append(", idTransferBeneficiary='").append(idTransferBeneficiary).append('\'');
+        sb.append(", stateTransfer='").append(stateTransfer).append('\'');
         sb.append('}');
         return sb.toString();
     }

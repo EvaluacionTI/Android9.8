@@ -2,15 +2,15 @@
     <string name="app_name">BVADRIEVL0303v01TransferenciaExterior</string>
     <string name="tv_numero_transfer_origen">N°transferencia origen</string>
     <string name="tv_numero_cuenta_origen">N° cuenta ordenante</string>
-    <string name="tv_moneda_cuenta_origen">Moneda cuenta ordenante</string>
-    <string name="tv_importe_transferir">Importe Transferir</string>
+    <string name="tv_moneda_a_transferir">Moneda a transferir</string>
+    <string name="tv_importe_transferir">Importe a transferir</string>
     <string name="tv_referencia_origen">Referencia</string>
     <string name="tv_nombre_beneficiario">Beneficiario</string>
     <string name="tv_numero_cuenta_beneficiario">N° cuenta beneficiario</string>
 
-    <string name="tv_amount_comision">Comisión</string>
-    <string name="tv_tipo_cambio">T.C.</string>
-    <string name="tv_amount_equivalent">Monto Equivalente</string>
+    <string name="tv_amount_comision">Comisión por transferencia</string>
+    <string name="tv_tipo_cambio">Tipo de cambio</string>
+    <string name="tv_amount_equivalent">Monto equivalente en moneda local</string>
 
     <string name="tv_target_number_transfer">N°transferencia</string>
     <string name="tv_target_date_transfer">Fecha</string>
@@ -19,7 +19,7 @@
     <string name="tv_target_amount_transfer">Importe</string>
     <string name="tv_target_reference_transfer">Referencia</string>
 
-    <string name="tv_state_pago">Estado</string>
+    <string name="tv_state_transfer">Estado de operación</string>
 
     <string name="btn_simular_transferir">Simulación</string>
     <string name="btn_aceptar_transferir">Aceptación</string>

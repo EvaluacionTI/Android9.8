@@ -9,8 +9,6 @@ public class CETransfer {
     private String targetHourTransfer;
     private String targetMoneyTransfer;
 
-
-
     private String targetAmountTransfer;
     private String targetReferenceTransfer;
 

@@ -37,31 +37,17 @@ public class CV02SimularOperacion extends AppCompatActivity {
         setContentView(R.layout.activity02_simular_operacion);
 
         oEditTextNumberAccount = findViewById(R.id.id_et_numero_cuenta_origen);
-        oEditTextMoneyAccount = findViewById(R.id.id_et_moneda_cuenta_origen);
+        oEditTextMoneyAccount = findViewById(R.id.id_et_moneda_a_transferir);
         oEditTextAmountTransfer = findViewById(R.id.id_et_importe_transferir);
         oEditTextBeneficiary = findViewById(R.id.id_et_nombre_beneficiario);
         oEditTextNumberAccountBeneficiary = findViewById(R.id.id_et_numero_cuenta_beneficiario);
         oEditTextReferenceOrdenant = findViewById(R.id.id_et_referencia_ordenante);
 
+        enabledEditText();
         oCESimulation = new CESimulation();
-        oEditTextNumberAccount.setText("00110121300001231231");
-        oEditTextMoneyAccount.setText("PEN");
-        oEditTextAmountTransfer.setText("11.20");
-        oEditTextBeneficiary.setText("Shaolin Identity One");
-        oEditTextNumberAccountBeneficiary.setText("00110121300009900990923");
-        oEditTextReferenceOrdenant.setText("Simulación de Transferencia ....!");
 
-        oCESimulation.setNameOrigin("Hackathon Ninja Project");
-        oCESimulation.setNumberAccountOrigin(String.valueOf(oEditTextNumberAccount.getText()));
-        oCESimulation.setMoneyAccountOrigin(String.valueOf(oEditTextMoneyAccount.getText()));
-        double value = Double.parseDouble(String.valueOf(oEditTextAmountTransfer.getText()));
-        oCESimulation.setAmountOrigin(value);
-        oCESimulation.setDateCurrent("2019-10-26");
-        oCESimulation.setReferenceOrigin(String.valueOf(oEditTextReferenceOrdenant.getText()));
-        oCESimulation.setNameBeneficiary(String.valueOf(oEditTextBeneficiary.getText()));
-        oCESimulation.setNumberAccountBeneficiary(String.valueOf(oEditTextNumberAccountBeneficiary.getText()));
-        oCESimulation.setMoneyAccountBeneficiary("USD");
-
+        loadDataSimulation();
+        viewDataSimulation();
         oButtonSimular = findViewById(R.id.id_btn_simular_transferencia);
 
         oButtonSimular.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +57,39 @@ public class CV02SimularOperacion extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void enabledEditText(){
+        oEditTextNumberAccount.setEnabled(false);
+        oEditTextMoneyAccount.setEnabled(false);
+        oEditTextAmountTransfer.setEnabled(false);
+        oEditTextBeneficiary.setEnabled(false);
+        oEditTextNumberAccountBeneficiary.setEnabled(false);
+        oEditTextReferenceOrdenant.setEnabled(false);
+    }
+
+    private void loadDataSimulation(){
+        oCESimulation = new CESimulation();
+
+        oCESimulation.setIdTransfer(152027L);
+        oCESimulation.setNameOrigin("Hackathon Ninja Project");
+        oCESimulation.setNumberAccountOrigin("0011-0121-30000123-123-1");
+        oCESimulation.setMoneyAccountOrigin("USD");
+        oCESimulation.setAmountOrigin(10.00);
+        oCESimulation.setDateCurrent("2019-10-26");
+        oCESimulation.setNameBeneficiary("Shaolin Identity One");
+        oCESimulation.setNumberAccountBeneficiary("4545943403-959506-095-04-5");
+        oCESimulation.setReferenceOrigin("Simulación de Transferencia ....!");
+
+    }
+
+    private void viewDataSimulation(){
+        oEditTextNumberAccount.setText(oCESimulation.getNameOrigin());
+        oEditTextMoneyAccount.setText(oCESimulation.getMoneyAccountOrigin());
+        oEditTextAmountTransfer.setText(String.valueOf(oCESimulation.getAmountOrigin()));
+        oEditTextBeneficiary.setText(oCESimulation.getNameBeneficiary());
+        oEditTextNumberAccountBeneficiary.setText(oCESimulation.getNumberAccountBeneficiary());
+        oEditTextReferenceOrdenant.setText(oCESimulation.getReferenceOrigin());
     }
 
     private class postSimulation extends AsyncTask<Void, Void, Void> {

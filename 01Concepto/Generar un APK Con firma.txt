@@ -1,0 +1,12 @@
+
+    Key Store Path: Ruta donde guardaremos la clave.
+    Password: Contraseña 1 para nuestra clave.
+    Alias: Nombre que daremos a nuestra clave.
+    Password: Contraseña 2 para nuestra clave.
+    Validity: Tiendo de validez de la clave (en años).
+    First and last name: Nombre y apellidos.
+    Organizational Unit: Nombre de nuestra empresa.
+    Organization: Nuestra empresa (otra vez)
+    City: Ciudad.
+    State: Estado, país.
+    Country Code: Código de nuestro país.
