@@ -42,7 +42,7 @@ public class CV01SecuenciaOperacion extends AppCompatActivity implements View.On
             Intent oIntento = new Intent(this, CV04CompletarOperacion.class);
             startActivity(oIntento);
         }else if (poView.getId() == R.id.id_button_query_by_id){
-            Intent oIntento = new Intent(this, CV05ConsultaById.class);
+            Intent oIntento = new Intent(this, CV05ConsultaTargetTransfer.class);
             startActivity(oIntento);
         }else if (poView.getId() == R.id.id_button_query_last_moviment){
             Intent oIntento = new Intent(this, CV06ConsultLastMovimient.class);
