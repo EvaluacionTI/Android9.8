@@ -14,7 +14,7 @@
         <activity android:name=".CV0602ViewLastMovimient"></activity>
         <activity android:name=".CV0601DetailsLastMovimient" />
         <activity android:name=".CV06ConsultLastMovimient" />
-        <activity android:name=".CV05ConsultaById" />
+        <activity android:name=".CV05ConsultaTargetTransfer" />
         <activity android:name=".CV02SimularOperacion" />
         <activity android:name=".CV04CompletarOperacion" />
         <activity android:name=".CV03AceptarOperacion" />
