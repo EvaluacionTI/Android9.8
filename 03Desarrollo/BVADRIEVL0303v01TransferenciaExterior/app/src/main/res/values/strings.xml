@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BVADRIEVL0303v01TransferenciaExterior</string>
+    <string name="app_name">BBVA CROSS PAY</string>
     <string name="tv_numero_transfer_origen">N°transferencia origen</string>
     <string name="tv_numero_cuenta_origen">N° cuenta ordenante</string>
     <string name="tv_moneda_a_transferir">Moneda a transferir</string>

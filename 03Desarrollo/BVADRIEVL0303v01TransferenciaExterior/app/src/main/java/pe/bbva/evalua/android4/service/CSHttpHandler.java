@@ -74,11 +74,13 @@ public class CSHttpHandler {
     public String callSimulateTransfer(String psRequestUrl, CESimulation poCEMovimient){
         String lsResponse = null;
 
+        Log.i(TAG, "URL : {}" + psRequestUrl);
+        Log.i(TAG, "URL : {}" + poCEMovimient.toString());
         try{
             URL oUrl = new URL(psRequestUrl);
-            HttpURLConnection oHttpUrlCxn = (HttpURLConnection) oUrl.openConnection();
+            Log.i(TAG, "Instancia la URL : {}" + oUrl);
 
-            Log.i(TAG, "URL : {}" + oUrl);
+            HttpURLConnection oHttpUrlCxn = (HttpURLConnection) oUrl.openConnection();
             Log.i(TAG, "HttpURLConnection : {}" + oHttpUrlCxn);
 
             // Add request Header
@@ -98,7 +100,6 @@ public class CSHttpHandler {
             oJsonData.put("nameOrigin", poCEMovimient.getNameOrigin());
             oJsonData.put("numberAccountOrigin", poCEMovimient.getNumberAccountOrigin());
             oJsonData.put("moneyAccountOrigin", poCEMovimient.getMoneyAccountOrigin());
-            oJsonData.put("nameOrigin", poCEMovimient.getNameOrigin());
             oJsonData.put("amountOrigin", poCEMovimient.getAmountOrigin());
             oJsonData.put("dateCurrent", poCEMovimient.getDateCurrent());
             oJsonData.put("referenceOrigin", poCEMovimient.getReferenceOrigin());
@@ -120,7 +121,7 @@ public class CSHttpHandler {
             Log.i(TAG, "getResponseCode : {}" + liResponseCode);
             if (liResponseCode==HttpURLConnection.HTTP_OK){
                 InputStream oIstream = new BufferedInputStream(oHttpUrlCxn.getInputStream());
-                convertStreamToString(oIstream);
+                lsResponse = convertStreamToString(oIstream);
             }
 
         }catch(MalformedURLException ex){

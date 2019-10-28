@@ -18,6 +18,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
+import pe.bbva.evalua.android4.entidad.CEAcceptation;
 import pe.bbva.evalua.android4.entidad.CEMovimient;
 import pe.bbva.evalua.android4.entidad.CESimulation;
 import pe.bbva.evalua.android4.service.CSHttpHandler;
@@ -29,7 +30,7 @@ public class CV02SimularOperacion extends AppCompatActivity {
     private EditText oEditTextNumberAccountBeneficiary, oEditTextReferenceOrdenant;
     private Button oButtonSimular;
     private CESimulation oCESimulation;
-
+    private CEAcceptation oCEAcceptation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +74,13 @@ public class CV02SimularOperacion extends AppCompatActivity {
 
         oCESimulation.setIdTransfer(152027L);
         oCESimulation.setNameOrigin("Hackathon Ninja Project");
-        oCESimulation.setNumberAccountOrigin("0011-0121-30000123-123-1");
-        oCESimulation.setMoneyAccountOrigin("USD");
-        oCESimulation.setAmountOrigin(10.00);
+        oCESimulation.setNumberAccountOrigin("00110121300001231231");
+        oCESimulation.setMoneyAccountOrigin("PEN");
+        oCESimulation.setAmountOrigin(11.20);
         oCESimulation.setDateCurrent("2019-10-26");
         oCESimulation.setNameBeneficiary("Shaolin Identity One");
-        oCESimulation.setNumberAccountBeneficiary("4545943403-959506-095-04-5");
+        oCESimulation.setNumberAccountBeneficiary("00110121300009900990923");
+        oCESimulation.setMoneyAccountBeneficiary("USD");
         oCESimulation.setReferenceOrigin("Simulación de Transferencia ....!");
 
     }
@@ -117,53 +119,14 @@ public class CV02SimularOperacion extends AppCompatActivity {
             }else{
                 try{
                     JSONObject oJsonObject = new JSONObject(lsJson);
-                    //getting JSON Array node
-                    // "contacts" es el nombre del objeto JSON del API
-                    JSONArray oJsonData = oJsonObject.getJSONArray("contacts");
 
-                    // looping through All Contacts
-                    oCESimulation = new CESimulation();
+                    oCEAcceptation = new CEAcceptation();
 
-                    for(int i=0; i<oJsonData.length();i++){
-                        JSONObject c = oJsonData.getJSONObject(i);
-                        String id = c.getString("id");
-                        String name = c.getString("name");
-                        String email = c.getString("email");
-                        String address = c.getString("address");
-                        String gender = c.getString("gender");
-
-                        // Phone node is JSON Object
-                        JSONObject oJsonPhone = c.getJSONObject("phone");
-                        String mobile = oJsonPhone.getString("mobile");
-                        String home = oJsonPhone.getString("home");
-                        String office = oJsonPhone.getString("office");
-
-                        // tmp hash map for single contact
-                        HashMap<String, String> oMapContact = new HashMap<>();
-
-                        // Determinar si numero es par o impar
-                        if (i%2==0){
-                            name = "25/10/2019";
-                            email = "ACCEPT";
-                            address = "USD";
-                            mobile = "5,898.93";
-                        }else{
-                            name = "26/10/2019";
-                            email = "CONFORM";
-                            address = "EUR";
-                            mobile = "99,983,939.99";
-                        }
-                        // adding each child node to HashMap key => value
-                        oMapContact.put("id", id);
-                        oMapContact.put("fecha", name);
-                        oMapContact.put("estado", email);
-                        oMapContact.put("moneda", address);
-                        oMapContact.put("movimiento", mobile);
-
-
-                        // adding contact to contact list
-                     //   oArrayListLastMovimient.add(oMapContact);
-                    }
+                    oCEAcceptation.setIdTransfer(oJsonObject.getLong("idTransfer"));
+                    oCEAcceptation.setTypeRates(oJsonObject.getDouble("typeRates"));
+                    oCEAcceptation.setAmountFee(oJsonObject.getDouble("amountFee"));
+                    oCEAcceptation.setAmountEquivalent(oJsonObject.getDouble("amountEquivalent"));
+                    oCEAcceptation.setReferenceBeneficiary(oJsonObject.getString("idQuoteExternal"));
 
                 }catch (JSONException ex) {
                     Log.e(TAG, "Json parsing error:" + ex.getMessage());
@@ -182,6 +145,8 @@ public class CV02SimularOperacion extends AppCompatActivity {
         @Override
         protected  void onPostExecute(Void poResult){
             super.onPostExecute(poResult);
+            String lsMensaje = oCEAcceptation.getAmountFee() + "/" + oCEAcceptation.getReferenceBeneficiary();
+            Toast.makeText(getApplicationContext(), "Ref.: " + lsMensaje, Toast.LENGTH_LONG).show();
            // ListAdapter oListAdapter = new SimpleAdapter(CV02SimularOperacion.this, oArrayListLastMovimient, R.layout.activity0601_details_last_movimient, new String[]{"fecha","estado", "moneda", "movimiento"}, new int[]{R.id.id_text_date_movimient, R.id.id_text_state_movimient, R.id.id_text_money_movimient, R.id.id_text_amount_movimient});
 
             //oListLastMovimients.setAdapter(oListAdapter);

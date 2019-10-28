@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CV05ConsultaTargetTransfer">
 
-
     <TextView
         android:id="@+id/id_tv_target_number_transfer"
         android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.UUID;
 
 import pe.bbva.evalua.android4.entidad.CETransfer;
@@ -55,11 +56,21 @@ public class CV05ConsultaTargetTransfer extends AppCompatActivity {
     }
 
     private void loadTransfer(){
+        Calendar c1 = Calendar.getInstance();
+        Calendar c2 = new GregorianCalendar();
 
+        String dia = Integer.toString(c2.get(Calendar.DATE));
+        String mes = Integer.toString(c2.get(Calendar.MONTH));
+        String annio = Integer.toString(c2.get(Calendar.YEAR));
+        String hora = Integer.toString(c2.get(Calendar.HOUR));
+        String minuto = Integer.toString(c2.get(Calendar.MONTH));
+        String segundo = Integer.toString(c2.get(Calendar.SECOND));
+        String sFecha = dia + "/" + mes + "/" + annio;
+        String sHora = hora + ":" + minuto + ":" + segundo;
 
         oCETransferTarget.setTargetNumberTransfer(String.valueOf(UUID.randomUUID()));
-        oCETransferTarget.setTargetDateTransfer("27/10/2019");
-        oCETransferTarget.setTargetHourTransfer("18:49:05");
+        oCETransferTarget.setTargetDateTransfer(sFecha);
+        oCETransferTarget.setTargetHourTransfer(sHora);
         oCETransferTarget.setTargetMoneyTransfer("USD");
         oCETransferTarget.setTargetAmountTransfer("10.00");
         oCETransferTarget.setTargetReferenceTransfer("549-384-*****-939-09, PE-LIMA");
