@@ -17,6 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,7 +33,8 @@ public class CV06ConsultLastMovimient extends AppCompatActivity implements Adapt
 
     private ListView oListLastMovimients;
     private ArrayList<HashMap<String, String>> oArrayListLastMovimient;
-    private List<CEMovimient> oCEMovimient;
+    private CEMovimient oCEMovimient;
+    private List<CEMovimient> oListCEMovimient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +53,19 @@ public class CV06ConsultLastMovimient extends AppCompatActivity implements Adapt
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+        Toast.makeText(CV06ConsultLastMovimient.this, " Position : " + i + "Long = "+ l, Toast.LENGTH_LONG).show();
+
+        CEMovimient oItemMovimient = oListCEMovimient.get(i);
+
         Intent oIntento = new Intent(this, CV0602ViewLastMovimient.class);
 
-        oIntento.putExtra("vBeneficiary","Ninja Project ");
-        oIntento.putExtra("vNumberAccountBeneficiary","242526-28");
-        oIntento.putExtra("vTypeRace", "3.4667");
-        oIntento.putExtra("vAmountComision", "5.00");
-        oIntento.putExtra("vAmountTransfer", "100.09");
-        oIntento.putExtra("vReferenceBeneficiary", "Ninja España");
+        oIntento.putExtra("vBeneficiary",oItemMovimient.getBeneficiary());
+        oIntento.putExtra("vNumberAccountBeneficiary",oItemMovimient.getNumberAccountBeneficiary());
+        oIntento.putExtra("vTypeRace", oItemMovimient.getTypeRace());
+        oIntento.putExtra("vAmountComision", oItemMovimient.getAmountComision());
+        oIntento.putExtra("vAmountTransfer", oItemMovimient.getAmountTransfer());
+        oIntento.putExtra("vReferenceBeneficiary", oItemMovimient.getReferenceBeneficiary());
 
         startActivity(oIntento);
     }
@@ -74,7 +81,7 @@ public class CV06ConsultLastMovimient extends AppCompatActivity implements Adapt
         @Override
         protected Void doInBackground(Void... voids) {
             CSHttpHandler oCSHttpHandler = new CSHttpHandler();
-            String lsUrl = "https://api.androidhive.info/contacts/";
+            String lsUrl = "http://ec2-18-224-40-63.us-east-2.compute.amazonaws.com:9090/bbva02/interpay/payments/";
             String lsJson = oCSHttpHandler.makeServiceCall(lsUrl);
             Log.i(TAG, "Response from URL" + lsJson);
             if (lsJson==null){
@@ -87,50 +94,40 @@ public class CV06ConsultLastMovimient extends AppCompatActivity implements Adapt
                 });
             }else{
                 try{
-                    JSONObject oJsonObject = new JSONObject(lsJson);
-                    //getting JSON Array node
-                    // "contacts" es el nombre del objeto JSON del API
-                    JSONArray oJsonContacts = oJsonObject.getJSONArray("contacts");
 
-                    // looping through All Contacts
-                    for(int i=0; i<oJsonContacts.length();i++){
-                        JSONObject c = oJsonContacts.getJSONObject(i);
-                        String id = c.getString("id");
-                        String name = c.getString("name");
-                        String email = c.getString("email");
-                        String address = c.getString("address");
-                        String gender = c.getString("gender");
+                    JSONArray oJsonMovimient = new JSONArray(lsJson);
+                    oListCEMovimient = new ArrayList<>();
+                    // looping through All Operation
+                    for(int i=0; i<oJsonMovimient.length();i++){
+                        JSONObject c = oJsonMovimient.getJSONObject(i);
+                        oCEMovimient = new CEMovimient();
+                        oCEMovimient.setIdTransfer(c.getString("idTransfer"));
+                        oCEMovimient.setDateMovimient(c.getString("dateMovimient"));
+                        oCEMovimient.setStateMovimient(c.getString("stateMovimient"));
+                        oCEMovimient.setAmountEquivalent(BigDecimal.valueOf(c.getDouble("amountEquivalent")));
+                        oCEMovimient.setBeneficiary(c.getString("beneficiary"));
+                        oCEMovimient.setNumberAccountBeneficiary(c.getString("numberAccountBeneficiary"));
+                        oCEMovimient.setReferenceBeneficiary(String.valueOf(c.getString("referenceBeneficiary")));
+                        oCEMovimient.setCurrencyBeneficiary(c.getString("currencyBeneficiary"));
+                        oCEMovimient.setTypeRace(BigDecimal.valueOf(c.getDouble("rate")));
+                        oCEMovimient.setAmountComision(BigDecimal.valueOf(c.getDouble("amountComision")));
+                        oCEMovimient.setAmountTransfer(BigDecimal.valueOf(c.getDouble("amountTransfer")));
+                        oCEMovimient.setCurrencyCode(c.getString("currencyCode"));
 
-                        // Phone node is JSON Object
-                        JSONObject oJsonPhone = c.getJSONObject("phone");
-                        String mobile = oJsonPhone.getString("mobile");
-                        String home = oJsonPhone.getString("home");
-                        String office = oJsonPhone.getString("office");
 
                         // tmp hash map for single contact
                         HashMap<String, String> oMapContact = new HashMap<>();
 
-                        // Determinar si numero es par o impar
-                        if (i%2==0){
-                            name = "25/10/2019";
-                            email = "ACCEPT";
-                            address = "USD";
-                            mobile = "5,898.93";
-                        }else{
-                            name = "26/10/2019";
-                            email = "CONFORM";
-                            address = "EUR";
-                            mobile = "99,983,939.99";
-                        }
                         // adding each child node to HashMap key => value
-                        oMapContact.put("id", id);
-                        oMapContact.put("fecha", name);
-                        oMapContact.put("estado", email);
-                        oMapContact.put("moneda", address);
-                        oMapContact.put("movimiento", mobile);
+                        oMapContact.put("idTransferencia", oCEMovimient.getIdTransfer());
+                        oMapContact.put("dateMovimient", oCEMovimient.getDateMovimient());
+                        oMapContact.put("state", oCEMovimient.getStateMovimient());
+                        oMapContact.put("money", oCEMovimient.getCurrencyBeneficiary());
+                        oMapContact.put("amountTransfer", String.valueOf(oCEMovimient.getAmountEquivalent()));
 
 
                         // adding contact to contact list
+                        oListCEMovimient.add(oCEMovimient);
                         oArrayListLastMovimient.add(oMapContact);
                     }
 
@@ -151,7 +148,7 @@ public class CV06ConsultLastMovimient extends AppCompatActivity implements Adapt
         @Override
         protected  void onPostExecute(Void poResult){
             super.onPostExecute(poResult);
-            ListAdapter oListAdapter = new SimpleAdapter(CV06ConsultLastMovimient.this, oArrayListLastMovimient, R.layout.activity0601_details_last_movimient, new String[]{"fecha","estado", "moneda", "movimiento"}, new int[]{R.id.id_text_date_movimient, R.id.id_text_state_movimient, R.id.id_text_money_movimient, R.id.id_text_amount_movimient});
+            ListAdapter oListAdapter = new SimpleAdapter(CV06ConsultLastMovimient.this, oArrayListLastMovimient, R.layout.activity0601_details_last_movimient, new String[]{"dateMovimient","state", "money", "amountTransfer"}, new int[]{R.id.id_text_date_movimient, R.id.id_text_state_movimient, R.id.id_text_money_movimient, R.id.id_text_amount_movimient});
 
             oListLastMovimients.setAdapter(oListAdapter);
         }

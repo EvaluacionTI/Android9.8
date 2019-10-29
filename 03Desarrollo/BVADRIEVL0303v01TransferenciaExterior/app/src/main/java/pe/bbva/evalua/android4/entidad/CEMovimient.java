@@ -1,6 +1,7 @@
 package pe.bbva.evalua.android4.entidad;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class CEMovimient implements Serializable {
 
@@ -8,15 +9,17 @@ public class CEMovimient implements Serializable {
     private String idTransfer;
     private String dateMovimient;
     private String stateMovimient;
-    private String amountEquivalent;
+    private BigDecimal amountEquivalent;
 
     //Second level
     private String beneficiary;
     private String numberAccountBeneficiary;
     private String referenceBeneficiary;
-    private String typeRace;
-    private String amountComision;
-    private String amountTransfer;
+    private String currencyBeneficiary;
+    private BigDecimal typeRace;
+    private BigDecimal amountComision;
+    private BigDecimal amountTransfer;
+    private String currencyCode;
 
 
     public String getIdTransfer() {
@@ -43,11 +46,11 @@ public class CEMovimient implements Serializable {
         this.stateMovimient = stateMovimient;
     }
 
-    public String getAmountEquivalent() {
+    public BigDecimal getAmountEquivalent() {
         return amountEquivalent;
     }
 
-    public void setAmountEquivalent(String amountEquivalent) {
+    public void setAmountEquivalent(BigDecimal amountEquivalent) {
         this.amountEquivalent = amountEquivalent;
     }
 
@@ -75,27 +78,62 @@ public class CEMovimient implements Serializable {
         this.referenceBeneficiary = referenceBeneficiary;
     }
 
-    public String getTypeRace() {
+    public String getCurrencyBeneficiary() {
+        return currencyBeneficiary;
+    }
+
+    public void setCurrencyBeneficiary(String currencyBeneficiary) {
+        this.currencyBeneficiary = currencyBeneficiary;
+    }
+
+    public BigDecimal getTypeRace() {
         return typeRace;
     }
 
-    public void setTypeRace(String typeRace) {
+    public void setTypeRace(BigDecimal typeRace) {
         this.typeRace = typeRace;
     }
 
-    public String getAmountComision() {
+    public BigDecimal getAmountComision() {
         return amountComision;
     }
 
-    public void setAmountComision(String amountComision) {
+    public void setAmountComision(BigDecimal amountComision) {
         this.amountComision = amountComision;
     }
 
-    public String getAmountTransfer() {
+    public BigDecimal getAmountTransfer() {
         return amountTransfer;
     }
 
-    public void setAmountTransfer(String amountTransfer) {
+    public void setAmountTransfer(BigDecimal amountTransfer) {
         this.amountTransfer = amountTransfer;
+    }
+
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("CEMovimient{");
+        sb.append("idTransfer='").append(getIdTransfer()).append('\'');
+        sb.append(", dateMovimient='").append(getDateMovimient()).append('\'');
+        sb.append(", stateMovimient='").append(getStateMovimient()).append('\'');
+        sb.append(", amountEquivalent=").append(getAmountEquivalent());
+        sb.append(", beneficiary='").append(getBeneficiary()).append('\'');
+        sb.append(", numberAccountBeneficiary='").append(getNumberAccountBeneficiary()).append('\'');
+        sb.append(", referenceBeneficiary='").append(getReferenceBeneficiary()).append('\'');
+        sb.append(", currencyBeneficiary='").append(getCurrencyBeneficiary()).append('\'');
+        sb.append(", typeRace=").append(getTypeRace());
+        sb.append(", amountComision=").append(getAmountComision());
+        sb.append(", amountTransfer=").append(getAmountTransfer());
+        sb.append(", currencyCode='").append(getCurrencyCode()).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
