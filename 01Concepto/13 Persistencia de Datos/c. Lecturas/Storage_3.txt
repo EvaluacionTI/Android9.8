@@ -1,1 +1,0 @@
-http://www.vogella.de/articles/AndroidSQLite/article.html
